@@ -2,6 +2,21 @@
 #include <stdbool.h>
 #include <time.h>
 
+//guesscheacker function determines with the user guessed the correct number generated. returns true of guessed, returns false of they didnt
+bool guessChecker(int guess, int num){
+    if(guess == num){
+        printf("You guessed the number!!! \n");
+        return true;
+    }
+    else if(num < guess){
+        printf("Your guess was lower than the number. Try again \n");
+        return false;
+    }
+    else if(num > guess){
+        printf("Your guess was higher than the number. Try again \n");
+        return false;
+    }
+}
 
 
 char line;
@@ -24,7 +39,7 @@ int main(){
         printf("Press 2 to chnage the max number. \n");
         printf("Press 3 to quit \n");
         scanf("%d", &choice);
-         
-
+       
+       
     }
 }
