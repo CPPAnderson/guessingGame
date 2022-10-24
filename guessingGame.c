@@ -18,6 +18,22 @@ bool guessChecker(int guess, int num){
     }
 }
 
+// maxChecker makes sure user inputs a valid ranger number for max 
+int maxChecker(int max){
+    if (max < 1){
+        printf("You have entered a number below 1. Please enter a max value between 1 - 2,147,483,647. Do not enter anything below or above that range. \n");
+        scanf("%d", max);
+        maxChecker(max);
+    }
+    else if (max > 2147483647){
+        printf("You have entered a number above 2,147,483,647. Please enter a max value between 1 - 2,147,483,647. Do not enter anything below or above that range. \n");
+        scanf("%d", max);
+        maxChecker(max);
+    }
+    else{
+        return max;
+    }
+}
 
 char line;
 
@@ -39,7 +55,7 @@ int main(){
         printf("Press 2 to chnage the max number. \n");
         printf("Press 3 to quit \n");
         scanf("%d", &choice);
-       
-       
+        
+
     }
 }
