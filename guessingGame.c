@@ -56,6 +56,38 @@ int main(){
         printf("Press 3 to quit \n");
         scanf("%d", &choice);
         
+        //switch statement depending on what they chose
+        switch(choice){
+            case(1):
+                //case 1 to play game
+                while(!al){
+                    scanf("%c", line);
+                    printf("guess the number between 1 - %d : ", max);
+                    valid = scanf("%d", &num);
+                    printf("\n");
+                    if (valid == 0){
+                        char k;
+                        scanf("%c", k);
+                        if (k == 'q')
+                            al = true;
+                    }
+                    else{
+                        if (guessChecker(guess, num) == true){
+                            return 0;
+                        }
+                    }
+                }
+                break;
+            case(2):
+            //case 2 to set a new max
+                printf("Enter a max value between 1 - 2,147,483,647. Do not enter anything below or above that range.\n");
+                scanf("%d", &max);
+                max = maxChecker(max);
+                break;
+            case(3):
+            // case 3 to exit program
+                return 0;
+        }   
 
     }
 }
